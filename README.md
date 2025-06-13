@@ -26,7 +26,7 @@ This repository simulates a scalable hydropower system, modeling the behavior of
 
 ## ℹ️ Notes
 
-The machine learning model files were intentionally removed to streamline the experience for new users. This allows users to focus first on the simulation and data analysis before building their own predictive models. The cleaned project structure ensures that users can get started right away after downloading.
+The machine learning model files were intentionally removed to streamline the experience for new users. This allows users to focus first on the simulation and data analysis before building their own predictive models. The cleaned project structure ensures that users can get started right away after creating a new branch.
 
 ## 👥 Contributors
 

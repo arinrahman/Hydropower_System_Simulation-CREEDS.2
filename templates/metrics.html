@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    {% if dark_mode %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='dark-mode.css') }}">
+    {% endif %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to styles.css -->
+</head>
+
+<body class="{% if dark_mode %}dark-mode{% endif %}">
+    <h1 style="text-align: center">Reservoir Simulation Metrics</h1>
+    <div class="container">
+        <button id="home-toggle" class="btn btn-primary" value="Click">Home</button>
+        <button id="dark-mode-toggle" class="btn btn-primary" value="Click">Dark Mode</button>
+        <div class="chart">
+            <h4 style="text-align: center">Power Graph</h4>
+            <canvas id="lineChart1" class="line-chart"></canvas>
+        </div>
+        <div class="chart">
+            <h4 style="text-align: center">Hydro Power Graph</h4>
+            <canvas id="lineChart2" class="line-chart"></canvas>
+        </div>
+        <div class="chart">
+            <h4 style="text-align: center">Solar Power Graph</h4>
+            <canvas id="lineChart3" class="line-chart"></canvas>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Redirecting to home page
+        $(document).ready(function () {
+            $('#home-toggle').click(function () {
+                window.location.href = '/home';
+            });
+        });
+        // Drawing the charts
+        const ctx1 = document.getElementById('lineChart1').getContext('2d');
+        const myChart1 = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Water Level',
+                    data: [],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time (Hours)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Power (kWh)',
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('lineChart2').getContext('2d');
+        const myChart2 = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Water Level',
+                    data: [],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time (Hours)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Power (kWh)',
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctx3 = document.getElementById('lineChart3').getContext('2d');
+        const myChart3 = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Water Level',
+                    data: [],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time (Hours)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Power (kWh)',
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

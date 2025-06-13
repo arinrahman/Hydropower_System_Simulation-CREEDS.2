@@ -1,0 +1,30 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode #tub {
+    border-color: white;
+}
+
+.btn-primary,
+#dark-mode-toggle {
+    background-color: blue !important;
+    color: #ffffff !important;
+}
+
+#water {
+    background: linear-gradient(to bottom, #add8e6 0%, #87ceeb 100%);
+    opacity: 0.7;
+    animation: ripple 2s infinite alternate;
+}
+
+@keyframes ripple {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.02);
+    }
+}
